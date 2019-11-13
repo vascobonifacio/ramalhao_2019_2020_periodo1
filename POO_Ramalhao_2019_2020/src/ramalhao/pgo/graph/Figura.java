@@ -22,7 +22,7 @@ public class Figura extends JFrame {
 	{ 
 		canvas = new Quadro(
 				this.createPrimeiraCasa(), 
-				null);    
+				this.createSegundaCasa());    
 		
 		canvas.setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));
 		 
@@ -61,7 +61,7 @@ public class Figura extends JFrame {
 	private Casa createSegundaCasa() 
 	{
 		Casa casa = new Casa(
-				Color.BLUE, 400, 150,
+				Color.BLUE, 450, 150,
 				Color.YELLOW);
 		return casa;
 	}

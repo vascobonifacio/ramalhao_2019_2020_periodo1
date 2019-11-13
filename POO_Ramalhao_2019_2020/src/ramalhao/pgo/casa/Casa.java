@@ -10,7 +10,7 @@ public class Casa {
 	
 	private Telhado telhado;
 	
-	private static final int LARGURA = 200;
+	private static final int LARGURA = 300;
 	private static final int ALTURA = 200;
 
 	public Casa(Color cor, int posicaoX, int posicaoY,
