@@ -52,7 +52,15 @@ public class Quadro extends JPanel {
 		
 		if (QUADRADO.equals(textoForma)) {
 			g.setColor(Color.BLUE);
-            g.fillRect(25, 25, 50, 50); 
+            g.fillRect(25, 25, 50, 50);
+
+            	
+		}
+        else if (RECTANGULO.equals(textoForma)) {
+        	Rectangulo r = new Rectangulo();
+        	Graphics2D g2d = (Graphics2D) g.create();
+        	g2d.setColor(Color.BLUE);
+        	g2d.fill(r.getPolygon());
             
             // TODO: livrarem-se dos números mágicos, usarem a classe polygon
             /*

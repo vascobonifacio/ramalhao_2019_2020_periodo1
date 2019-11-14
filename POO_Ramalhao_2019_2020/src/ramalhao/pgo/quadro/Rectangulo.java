@@ -7,8 +7,8 @@ public class Rectangulo {
 		Polygon p = new Polygon();
 		p.addPoint(25, 25);
 		p.addPoint(75, 25);
-		p.addPoint(50, 25);
-		p.addPoint(50, 75);
+		p.addPoint(75, 50);
+		p.addPoint(25, 50);
 		return p;
 	}
 	
