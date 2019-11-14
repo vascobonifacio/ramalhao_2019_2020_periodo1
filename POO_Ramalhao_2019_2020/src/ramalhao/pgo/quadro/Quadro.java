@@ -54,6 +54,7 @@ public class Quadro extends JPanel {
         }
 	}
 	
+	
 	private class RadioBtnListenerFormas implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {

@@ -17,7 +17,6 @@ public class Programa extends JFrame {
 	public static final int ALTURA_QUADRO = 600;
 	
 	private Quadro quadro;
-
 	public Programa()
 	{
 		quadro = new Quadro();    
@@ -34,6 +33,7 @@ public class Programa extends JFrame {
 		setTitle("Quadro");  // "super" JFrame sets the title
 		setVisible(true);    // "super" JFrame show
 	}
+	
 	
 	// The entry main method
 	public static void main(String[] args) 
