@@ -3,6 +3,7 @@ package ramalhao.pgo.quadro;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,8 +17,9 @@ public class Quadro extends JPanel {
     private static final String TRIANGULO = "Triangulo";
     private static final String RECTANGULO = "Rectangulo";
     private static final String LINHA = "Linha";
+    private static final String CASA = "Casa";
     
-    private static final String[] FORMAS = { QUADRADO, TRIANGULO, RECTANGULO, LINHA };
+    private static final String[] FORMAS = { QUADRADO, TRIANGULO, RECTANGULO, LINHA, CASA };
     
     private String textoForma = "";
     
@@ -50,7 +52,17 @@ public class Quadro extends JPanel {
 		
 		if (QUADRADO.equals(textoForma)) {
 			g.setColor(Color.BLUE);
-            g.fillRect(25, 25, 50, 50); // TODO: livrarem-se dos números mágicos, usarem a classe polygon
+            g.fillRect(25, 25, 50, 50); 
+            
+            // TODO: livrarem-se dos números mágicos, usarem a classe polygon
+            /*
+             * 
+             * Graphics2D g2d = (Graphics2D) g.create();
+		  
+				g2d.setColor(Color.RED);
+				g2d.fill( variavel da figura);
+             * 
+             */
         }
 	}
 	
