@@ -56,7 +56,7 @@ public class Quadro extends JPanel {
 		else if (TRIANGULO.equals(textoForma)) {
 			Graphics2D g2d = (Graphics2D) g.create();
   		  
-    		g2d.setColor(Color.RED);
+    		g2d.setColor(Color.PINK);
     		Triangulo t = new Triangulo();
     		g2d.fill(t.getPolygon());
 		}
@@ -66,6 +66,13 @@ public class Quadro extends JPanel {
     		g2d.setColor(Color.GREEN);
     		Linha l = new Linha();
     		g2d.fill(l.getPolygon());
+		}
+		else if (RECTANGULO.equals(textoForma)) {
+			Graphics2D g2d = (Graphics2D) g.create();
+  		  
+    		g2d.setColor(Color.RED);
+    		Rectangulo r = new Rectangulo();
+    		g2d.fill(r.getPolygon());
 		}
 	}
 	
