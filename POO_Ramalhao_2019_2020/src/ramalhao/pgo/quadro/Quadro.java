@@ -58,7 +58,13 @@ public class Quadro extends JPanel {
 			Graphics2D g2d = (Graphics2D) g.create();
 			  
 			g2d.setColor(Color.RED);
-			g2d.fill( variavel da figura);
+			g2d.fill(variaveldafigura);
+			
+		else if(RETANGULO.equals(textoForma)) {
+			Graphics2D g2d = (Graphics2D) g.create();
+			  
+			g2d.setColor(Color.RED);
+			g2d.fill(variaveldafigura);	
 			
 		}
             
