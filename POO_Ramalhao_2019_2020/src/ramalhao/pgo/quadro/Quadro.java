@@ -17,8 +17,9 @@ public class Quadro extends JPanel {
     private static final String TRIANGULO = "Triangulo";
     private static final String RECTANGULO = "Rectangulo";
     private static final String LINHA = "Linha";
+    private static final String CASA = "Casa";
     
-    private static final String[] FORMAS = { QUADRADO, TRIANGULO, RECTANGULO, LINHA };
+    private static final String[] FORMAS = { QUADRADO, TRIANGULO, RECTANGULO, LINHA, CASA };
     
     private String textoForma = "";
     
@@ -49,6 +50,7 @@ public class Quadro extends JPanel {
 		super.paintComponent(g);
 		setBackground(Color.WHITE);
 		
+
 		if (TRIANGULO.equals(textoForma)){
 			Graphics2D g2d = (Graphics2D) g.create();
 			g2d.setColor(Color.green);
@@ -73,6 +75,13 @@ public class Quadro extends JPanel {
 			quadrado q = new quadrado();
 			g2d.fill(q.getPolygon());
 		}	
+		else if (CASA.equals(textoForma)) {
+			Graphics2D g2d = (Graphics2D) g.create();
+			g.setColor(Color.RED);
+			casa c = new casa();
+			g2d.fill(c.getPolygon());
+		}	
+
 	}
 	
 	class RadioBtnListenerFormas implements ActionListener {
