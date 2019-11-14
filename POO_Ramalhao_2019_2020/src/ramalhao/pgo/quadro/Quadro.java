@@ -3,6 +3,7 @@ package ramalhao.pgo.quadro;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -48,13 +49,33 @@ public class Quadro extends JPanel {
 		super.paintComponent(g);
 		setBackground(Color.WHITE);
 		
-		if (QUADRADO.equals(textoForma)) {
-			g.setColor(Color.BLUE);
-            g.fillRect(25, 25, 50, 50); // TODO: livrarem-se dos números mágicos, usarem a classe polygon
-        }
+		if (TRIANGULO.equals(textoForma)){
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.green);
+			Triangulo t = new Triangulo();
+			g2d.fill(t.getPolygon());
+		}
+		else if (RECTANGULO.equals(textoForma)) {
+			Graphics2D g2d = (Graphics2D) g.create();
+			g.setColor(Color.RED);
+			Retangulo r = new Retangulo();
+			g2d.fill(r.getPolygon());
+		}	
+		else if (LINHA.equals(textoForma)) {
+			Graphics2D g2d = (Graphics2D) g.create();
+			g.setColor(Color.darkGray);
+			Linha l = new Linha();
+			g2d.fill(l.getPolygon());
+		}	
+		else if (QUADRADO.equals(textoForma)) {
+			Graphics2D g2d = (Graphics2D) g.create();
+			g.setColor(Color.RED);
+			quadrado q = new quadrado();
+			g2d.fill(q.getPolygon());
+		}	
 	}
 	
-	private class RadioBtnListenerFormas implements ActionListener {
+	class RadioBtnListenerFormas implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
         	textoForma = e.getActionCommand();
