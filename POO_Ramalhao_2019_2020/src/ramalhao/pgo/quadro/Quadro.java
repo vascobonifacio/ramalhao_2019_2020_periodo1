@@ -53,6 +53,14 @@ public class Quadro extends JPanel {
 		if (QUADRADO.equals(textoForma)) {
 			g.setColor(Color.BLUE);
             g.fillRect(25, 25, 50, 50); 
+		}
+		else if(TRIANGULO.equals(textoForma)) {
+			Graphics2D g2d = (Graphics2D) g.create();
+			  
+			g2d.setColor(Color.RED);
+			g2d.fill( variavel da figura);
+			
+		}
             
             // TODO: livrarem-se dos números mágicos, usarem a classe polygon
             /*
@@ -63,7 +71,7 @@ public class Quadro extends JPanel {
 				g2d.fill( variavel da figura);
              * 
              */
-        }
+        
 	}
 	
 	private class RadioBtnListenerFormas implements ActionListener {
