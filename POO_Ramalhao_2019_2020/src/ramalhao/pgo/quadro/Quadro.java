@@ -72,7 +72,57 @@ public class Quadro extends JPanel {
              * 
              */
         }
+        else if (LINHA.equals(textoForma)) {
+        	Linha r = new Linha();
+        	Graphics2D g2d = (Graphics2D) g.create();
+        	g2d.setColor(Color.BLUE);
+        	g2d.fill(r.getPolygon());
+            
+            // TODO: livrarem-se dos números mágicos, usarem a classe polygon
+            /*
+             * 
+             * Graphics2D g2d = (Graphics2D) g.create();
+		  
+				g2d.setColor(Color.RED);
+				g2d.fill( variavel da figura);
+             * 
+             */
+        }
+        else if (TRIANGULO.equals(textoForma)) {
+        	Triangulo r = new Triangulo();
+        	Graphics2D g2d = (Graphics2D) g.create();
+        	g2d.setColor(Color.BLUE);
+        	g2d.fill(r.getPolygon());
+            
+            // TODO: livrarem-se dos números mágicos, usarem a classe polygon
+            /*
+             * 
+             * Graphics2D g2d = (Graphics2D) g.create();
+		  
+				g2d.setColor(Color.RED);
+				g2d.fill( variavel da figura);
+             * 
+             */
 	}
+        else if (CASA.equals(textoForma)) {
+        	Casa r = new Casa();
+        	Graphics2D g2d = (Graphics2D) g.create();
+        	g2d.setColor(Color.BLUE);
+        	g2d.fill(r.getPolygon());
+            
+            // TODO: livrarem-se dos números mágicos, usarem a classe polygon
+            /*
+             * 
+             * Graphics2D g2d = (Graphics2D) g.create();
+		  
+				g2d.setColor(Color.RED);
+				g2d.fill( variavel da figura);
+             * 
+             */
+	}
+	}
+	
+	
 	
 	
 	private class RadioBtnListenerFormas implements ActionListener {
