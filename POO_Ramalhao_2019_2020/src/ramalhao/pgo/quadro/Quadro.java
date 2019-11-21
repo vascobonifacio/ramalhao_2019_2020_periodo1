@@ -94,8 +94,8 @@ public class Quadro extends JPanel {
 			g2d.setColor(Color.RED);
 			Point ponto1 = new Point(150, 150);
 			Point ponto2 = new Point(300, 150);
-			Point ponto3 = new Point(150, 300);
-			Point ponto4 = new Point(300, 300);
+			Point ponto3 = new Point(300, 300);
+			Point ponto4 = new Point(150, 300);
 						
 			Quadrilatero q = new Quadrilatero(ponto1, ponto2, ponto3, ponto4);
 			g2d.fill(q.getPolygon1());
@@ -108,12 +108,13 @@ public class Quadro extends JPanel {
 		{
 			Graphics2D g2d = (Graphics2D) g.create();
 			g2d.setColor(Color.gray);
-			Point ponto1 = new Point(350, 150);
-			Point ponto2 = new Point(350, 319);
-			Point ponto3 = new Point(291, 331);
-			Point ponto4 = new Point(409, 331);
-			Point ponto5 = new Point(445, 219);
-						
+			
+			Point ponto1 = new Point(150, 150);
+			Point ponto2 = new Point(225, 100);
+			Point ponto3 = new Point(300, 150);
+			Point ponto4 = new Point(300, 300);
+			Point ponto5 = new Point(150, 300);
+			
 			Pentagono q = new Pentagono(ponto1, ponto2, ponto3, ponto4, ponto5);
 			g2d.fill(q.getPolygon());
 			
