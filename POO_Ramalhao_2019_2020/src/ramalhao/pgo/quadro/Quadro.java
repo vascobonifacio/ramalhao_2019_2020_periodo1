@@ -16,10 +16,10 @@ public class Quadro extends JPanel {
 	private static final String QUADRADO = "Quadrado";
     private static final String TRIANGULO = "Triangulo";
     private static final String RECTANGULO = "Rectangulo";
-    private static final String LINHA = "Linha";
     private static final String CASA = "Casa";
+    private static final String PENTAGONO_EQUIL = "Pentagono Equilátero";
     
-    private static final String[] FORMAS = { QUADRADO, TRIANGULO, RECTANGULO, LINHA, CASA };
+    private static final String[] FORMAS = { QUADRADO, TRIANGULO, RECTANGULO, CASA, PENTAGONO_EQUIL };
     
     private String textoForma = "";
     
@@ -50,82 +50,55 @@ public class Quadro extends JPanel {
 		super.paintComponent(g);
 		setBackground(Color.WHITE);
 		
-		if (QUADRADO.equals(textoForma)) {
-			g.setColor(Color.BLUE);
-            g.fillRect(25, 25, 50, 50);
-
-            	
+		if (TRIANGULO.equals(textoForma))
+		{
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.green);
+			
+			
+//			TODO inicializar pontos, criar triangulo numa variável chamada t, 
+//			depois descomentar a linha abaixo
+//			g2d.fill(t.getPolygon());
 		}
-        else if (RECTANGULO.equals(textoForma)) {
-        	Rectangulo r = new Rectangulo();
-        	Graphics2D g2d = (Graphics2D) g.create();
-        	g2d.setColor(Color.BLUE);
-        	g2d.fill(r.getPolygon());
-            
-            // TODO: livrarem-se dos números mágicos, usarem a classe polygon
-            /*
-             * 
-             * Graphics2D g2d = (Graphics2D) g.create();
-		  
-				g2d.setColor(Color.RED);
-				g2d.fill( variavel da figura);
-             * 
-             */
-        }
-        else if (LINHA.equals(textoForma)) {
-        	Linha r = new Linha();
-        	Graphics2D g2d = (Graphics2D) g.create();
-        	g2d.setColor(Color.BLUE);
-        	g2d.fill(r.getPolygon());
-            
-            // TODO: livrarem-se dos números mágicos, usarem a classe polygon
-            /*
-             * 
-             * Graphics2D g2d = (Graphics2D) g.create();
-		  
-				g2d.setColor(Color.RED);
-				g2d.fill( variavel da figura);
-             * 
-             */
-        }
-        else if (TRIANGULO.equals(textoForma)) {
-        	Triangulo r = new Triangulo();
-        	Graphics2D g2d = (Graphics2D) g.create();
-        	g2d.setColor(Color.BLUE);
-        	g2d.fill(r.getPolygon());
-            
-            // TODO: livrarem-se dos números mágicos, usarem a classe polygon
-            /*
-             * 
-             * Graphics2D g2d = (Graphics2D) g.create();
-		  
-				g2d.setColor(Color.RED);
-				g2d.fill( variavel da figura);
-             * 
-             */
-	}
-        else if (CASA.equals(textoForma)) {
-        	Casa r = new Casa();
-        	Graphics2D g2d = (Graphics2D) g.create();
-        	g2d.setColor(Color.BLUE);
-        	g2d.fill(r.getPolygon());
-            
-            // TODO: livrarem-se dos números mágicos, usarem a classe polygon
-            /*
-             * 
-             * Graphics2D g2d = (Graphics2D) g.create();
-		  
-				g2d.setColor(Color.RED);
-				g2d.fill( variavel da figura);
-             * 
-             */
-	}
+		else if (RECTANGULO.equals(textoForma)) 
+		{
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.yellow);
+			
+//			TODO inicializar pontos, criar quadrilatero numa variável chamada q, 
+//			depois descomentar a linha abaixo
+//			g2d.fill(q.getPolygon());
+		}	
+		else if (QUADRADO.equals(textoForma)) 
+		{
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.RED);
+			
+//			TODO inicializar pontos, criar quadrilatero numa variável chamada q, 
+//			depois descomentar a linha abaixo
+//			g2d.fill(q.getPolygon());
+		}	
+		else if (CASA.equals(textoForma)) 
+		{
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.gray);
+			
+//			TODO inicializar pontos, criar pentagono numa variável chamada p, 
+//			depois descomentar a linha abaixo
+//			g2d.fill(p.getPolygon());
+		}
+		else if(PENTAGONO_EQUIL.equals(textoForma)) 
+		{
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.BLUE);
+			
+//			TODO inicializar pontos, criar pentagono numa variável chamada p, 
+//			depois descomentar a linha abaixo
+//			g2d.fill(p.getPolygon());
+		}
 	}
 	
-	
-	
-	
-	private class RadioBtnListenerFormas implements ActionListener {
+	class RadioBtnListenerFormas implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
         	textoForma = e.getActionCommand();
