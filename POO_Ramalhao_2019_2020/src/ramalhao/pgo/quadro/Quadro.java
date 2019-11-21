@@ -59,9 +59,25 @@ public class Quadro extends JPanel {
         	
         	g2d.setColor(Color.RED);
         	Triangulo t = new Triangulo();
-        	g2d.fill(t.getpolygon());
+        	g2d.fill(t.getPolygon());
         }
+		
+        else if(RECTANGULO.equals(textoForma)) {
+        	Graphics2D g2d = (Graphics2D) g.create();
+        	
+        	g2d.setColor(Color.BLUE);
+        	Retangulo r = new Retangulo();
+        	g2d.fill(r.getPolygon());
         }
+		
+        else if(LINHA.equals(textoForma)) {
+        	Graphics2D g2d = (Graphics2D) g.create();
+        	
+        	g2d.setColor(Color.BLUE);
+        	Linha l = new Linha();
+        	g2d.fill(l.getPolygon());
+        }
+       }
 	
 	private class RadioBtnListenerFormas implements ActionListener {
         @Override
