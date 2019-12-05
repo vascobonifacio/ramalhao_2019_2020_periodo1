@@ -16,9 +16,10 @@ public class Quadro extends JPanel {
 	private static final String QUADRADO = "Quadrado";
     private static final String TRIANGULO = "Triangulo";
     private static final String RECTANGULO = "Rectangulo";
-    private static final String LINHA = "Linha";
+    private static final String CASA = "Casa";
+    private static final String PENTAGONO_EQUIL = "Pentagono Equilátero";
     
-    private static final String[] FORMAS = { QUADRADO, TRIANGULO, RECTANGULO, LINHA };
+    private static final String[] FORMAS = { QUADRADO, TRIANGULO, RECTANGULO, CASA, PENTAGONO_EQUIL };
     
     private String textoForma = "";
     
@@ -49,37 +50,55 @@ public class Quadro extends JPanel {
 		super.paintComponent(g);
 		setBackground(Color.WHITE);
 		
-		if (QUADRADO.equals(textoForma)) {
-			g.setColor(Color.BLUE);
-            g.fillRect(25, 25, 50, 50); 
+		if (TRIANGULO.equals(textoForma))
+		{
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.green);
+			
+			
+//			TODO inicializar pontos, criar triangulo numa variável chamada t, 
+//			depois descomentar a linha abaixo
+//			g2d.fill(t.getPolygon());
 		}
-            
-        else if(TRIANGULO.equals(textoForma)) {
-        	Graphics2D g2d = (Graphics2D) g.create();
-        	
-        	g2d.setColor(Color.RED);
-        	Triangulo t = new Triangulo();
-        	g2d.fill(t.getPolygon());
-        }
-		
-        else if(RECTANGULO.equals(textoForma)) {
-        	Graphics2D g2d = (Graphics2D) g.create();
-        	
-        	g2d.setColor(Color.BLUE);
-        	Retangulo r = new Retangulo();
-        	g2d.fill(r.getPolygon());
-        }
-		
-        else if(LINHA.equals(textoForma)) {
-        	Graphics2D g2d = (Graphics2D) g.create();
-        	
-        	g2d.setColor(Color.BLUE);
-        	Linha l = new Linha();
-        	g2d.fill(l.getPolygon());
-        }
-       }
+		else if (RECTANGULO.equals(textoForma)) 
+		{
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.yellow);
+			
+//			TODO inicializar pontos, criar quadrilatero numa variável chamada q, 
+//			depois descomentar a linha abaixo
+//			g2d.fill(q.getPolygon());
+		}	
+		else if (QUADRADO.equals(textoForma)) 
+		{
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.RED);
+			
+//			TODO inicializar pontos, criar quadrilatero numa variável chamada q, 
+//			depois descomentar a linha abaixo
+//			g2d.fill(q.getPolygon());
+		}	
+		else if (CASA.equals(textoForma)) 
+		{
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.gray);
+			
+//			TODO inicializar pontos, criar pentagono numa variável chamada p, 
+//			depois descomentar a linha abaixo
+//			g2d.fill(p.getPolygon());
+		}
+		else if(PENTAGONO_EQUIL.equals(textoForma)) 
+		{
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setColor(Color.BLUE);
+			
+//			TODO inicializar pontos, criar pentagono numa variável chamada p, 
+//			depois descomentar a linha abaixo
+//			g2d.fill(p.getPolygon());
+		}
+	}
 	
-	private class RadioBtnListenerFormas implements ActionListener {
+	class RadioBtnListenerFormas implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
         	textoForma = e.getActionCommand();
