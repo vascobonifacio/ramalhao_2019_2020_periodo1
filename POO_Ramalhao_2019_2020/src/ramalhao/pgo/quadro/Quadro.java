@@ -11,6 +11,11 @@ import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import ramalhao.pgo.program.Pentagono;
+import ramalhao.pgo.program.Point;
+import ramalhao.pgo.program.Quadrilatero;
+import ramalhao.pgo.program.Triangulo;
+
 public class Quadro extends JPanel {
 	
 	private static final String QUADRADO = "Quadrado";
@@ -55,46 +60,70 @@ public class Quadro extends JPanel {
 			Graphics2D g2d = (Graphics2D) g.create();
 			g2d.setColor(Color.green);
 			
+			Point p1 = new Point(150,150);
+			Point p2 = new Point(250,300);
+			Point p3 = new Point(50,300);
 			
-//			TODO inicializar pontos, criar triangulo numa variável chamada t, 
-//			depois descomentar a linha abaixo
-//			g2d.fill(t.getPolygon());
+			
+			Triangulo t = new Triangulo(p1,p2,p3);
+			g2d.fill(t.getPolygon());
 		}
 		else if (RECTANGULO.equals(textoForma)) 
 		{
 			Graphics2D g2d = (Graphics2D) g.create();
 			g2d.setColor(Color.yellow);
 			
-//			TODO inicializar pontos, criar quadrilatero numa variável chamada q, 
-//			depois descomentar a linha abaixo
-//			g2d.fill(q.getPolygon());
+			Point p1 = new Point(100,100);
+			Point p2 = new Point(500,100);
+			Point p3 = new Point(500,300);
+			Point p4 = new Point(100,300);
+			
+			Quadrilatero q = new Quadrilatero(p1,p2,p3,p4);
+			g2d.fill(q.getPolygon());
 		}	
 		else if (QUADRADO.equals(textoForma)) 
 		{
 			Graphics2D g2d = (Graphics2D) g.create();
 			g2d.setColor(Color.RED);
 			
-//			TODO inicializar pontos, criar quadrilatero numa variável chamada q, 
-//			depois descomentar a linha abaixo
-//			g2d.fill(q.getPolygon());
+			Point p1 = new Point(100,100);
+			Point p2 = new Point(300,100);
+			Point p3 = new Point(300,300);
+			Point p4 = new Point(100,300);
+		
+			
+		Quadrilatero q = new Quadrilatero(p1,p2,p3,p4);
+		g2d.fill(q.getPolygon());
 		}	
 		else if (CASA.equals(textoForma)) 
 		{
 			Graphics2D g2d = (Graphics2D) g.create();
 			g2d.setColor(Color.gray);
 			
-//			TODO inicializar pontos, criar pentagono numa variável chamada p, 
-//			depois descomentar a linha abaixo
-//			g2d.fill(p.getPolygon());
+			Point p1 = new Point(150,100);
+			Point p2 = new Point(250,200);
+			Point p3 = new Point(250,350);
+			Point p4 = new Point(50,350);
+			Point p5 = new Point(50,200);
+			
+			
+			Pentagono p = new Pentagono(p1,p2,p3,p4,p5);
+			g2d.fill(p.getPolygon());
 		}
 		else if(PENTAGONO_EQUIL.equals(textoForma)) 
 		{
 			Graphics2D g2d = (Graphics2D) g.create();
 			g2d.setColor(Color.BLUE);
 			
-//			TODO inicializar pontos, criar pentagono numa variável chamada p, 
-//			depois descomentar a linha abaixo
-//			g2d.fill(p.getPolygon());
+			Point p1 = new Point(100,50);
+			Point p2 = new Point(150,100);
+			Point p3 = new Point(125,150);
+			Point p4 = new Point(75,150);
+			Point p5 = new Point(50,100);
+			
+			
+			Pentagono p = new Pentagono(p1,p2,p3,p4,p5);
+			g2d.fill(p.getPolygon());
 		}
 	}
 	
