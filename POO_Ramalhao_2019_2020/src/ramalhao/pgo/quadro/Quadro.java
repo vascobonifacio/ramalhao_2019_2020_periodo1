@@ -11,6 +11,9 @@ import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import ramalhao.pgo.quadro.figuras.Point;
+import ramalhao.pgo.quadro.figuras.Triangulo;
+
 public class Quadro extends JPanel {
 	
 	private static final String QUADRADO = "Quadrado";
@@ -55,10 +58,14 @@ public class Quadro extends JPanel {
 			Graphics2D g2d = (Graphics2D) g.create();
 			g2d.setColor(Color.green);
 			
+			Point p1=new Point(50,50);
+			Point p2=new Point(100,65);
+			Point p3=new Point(75,35);
 			
+			Triangulo t=new Triangulo(p1,p2,p3);
 //			TODO inicializar pontos, criar triangulo numa variável chamada t, 
 //			depois descomentar a linha abaixo
-//			g2d.fill(t.getPolygon());
+			g2d.fill(t.getPolygon());
 		}
 		else if (RECTANGULO.equals(textoForma)) 
 		{
