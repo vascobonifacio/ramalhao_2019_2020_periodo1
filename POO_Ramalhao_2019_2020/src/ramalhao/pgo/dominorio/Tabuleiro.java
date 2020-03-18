@@ -39,9 +39,7 @@ public class Tabuleiro {
 		}
 		
 		sb.append("]");
-		
-		//sb.append(casas.toString());
-		
+
 		return sb.toString();
 	}
 
