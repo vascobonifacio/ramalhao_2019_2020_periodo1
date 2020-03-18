@@ -18,7 +18,7 @@ public class Tabuleiro {
 			List<CasaTabuleiro> linha = new ArrayList<>();
 			
 			for(int j = 0; j < numeroCasas; j++) {
-				CasaTabuleiro casa = new CasaTabuleiro(contadorPosicoes, false);
+				CasaTabuleiro casa = new CasaTabuleiro(contadorPosicoes);
 				contadorPosicoes++;
 				linha.add(casa);
 			}
