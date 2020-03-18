@@ -6,19 +6,21 @@ import java.util.List;
 public class Tabuleiro {
 
 	private List<List<CasaTabuleiro>> casas;
+	private int numeroCasasPorLado;
 	
-	public Tabuleiro(int numeroCasas) {
+	public Tabuleiro(int numero) {
 		
-		casas = new ArrayList<>();
+		this.numeroCasasPorLado = numero;
+		this.casas = new ArrayList<>();
 		
 		int contadorPosicoes = 1;
 		
-		for(int i = 0; i < numeroCasas; i++) {
+		for(int i = 0; i < this.numeroCasasPorLado; i++) {
 			
 			List<CasaTabuleiro> linha = new ArrayList<>();
 			
-			for(int j = 0; j < numeroCasas; j++) {
-				CasaTabuleiro casa = new CasaTabuleiro(contadorPosicoes, false);
+			for(int j = 0; j < this.numeroCasasPorLado; j++) {
+				CasaTabuleiro casa = new CasaTabuleiro(contadorPosicoes);
 				contadorPosicoes++;
 				linha.add(casa);
 			}
@@ -27,8 +29,20 @@ public class Tabuleiro {
 		}
 	}
 	
+	public void registarJogada(Jogada jogada, boolean jogadorVerticalAtivo) 
+	{		
+		CasaTabuleiro casa1 = this.obterCasa(jogada.getPosicao1());
+		CasaTabuleiro casa2 = this.obterCasa(jogada.getPosicao2());
+		
+		if(jogadorVerticalAtivo)
+		{
+			
+		}
+	}
+	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("[\n");
@@ -41,6 +55,14 @@ public class Tabuleiro {
 		sb.append("]");
 
 		return sb.toString();
+	}
+	
+	public CasaTabuleiro obterCasa(int posicao)
+	{
+		int x = (posicao - 1) / numeroCasasPorLado;
+		int y = (posicao - 1) % numeroCasasPorLado;
+
+		return casas.get(x).get(y);
 	}
 
 }
