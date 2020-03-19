@@ -1,7 +1,7 @@
 package ramalhao.pgo.dominorio;
 
-public class AvaliadorRegras {
-	
+public class AvaliadorRegras 
+{
 	private Tabuleiro tabuleiro;
 	private int numeroCasasPorLadoTabuleiro; 
 
@@ -80,7 +80,6 @@ public class AvaliadorRegras {
 		return validar;
 	}
 	
-	
 	private boolean validarLimites(Jogada jogada)
 	{
 		boolean validar = true;
@@ -155,5 +154,4 @@ public class AvaliadorRegras {
 		
 		return validar;
 	}
-	
 }

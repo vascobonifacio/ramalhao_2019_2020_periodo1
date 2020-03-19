@@ -2,7 +2,8 @@ package ramalhao.pgo.dominorio;
 
 import java.util.Scanner;
 
-public class Dominorio {
+public class Dominorio 
+{
 	
 	//opções que não sejam letras quebram o jogo. vamos aprender isso a resolver isso no 3º período
 	
@@ -19,17 +20,19 @@ public class Dominorio {
 		this.avaliadorRegras = new AvaliadorRegras(this.tabuleiro);
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		Dominorio jogo = new Dominorio();
 		Scanner scanner = new Scanner(System.in);
 		
-		while(!jogo.isJogoConcluido()) {
-			
+		while(!jogo.isJogoConcluido())
+		{	
 			jogo.desenhaTabuleiro();
 			
 			int opcao = jogo.apresentarOpcoes(scanner);
 			
-			switch(opcao) {
+			switch(opcao) 
+			{
 				case 1:
 					//fazer a jogada
 					jogo.fazerJogada(scanner);
@@ -54,12 +57,15 @@ public class Dominorio {
 	}
 
 	private int apresentarOpcoes(Scanner scanner) {
-		if(this.jogadorVerticalAtivo) {
+		if(this.jogadorVerticalAtivo) 
+		{
 			System.out.println("Jogador V ativo.");
 		}
-		else {
+		else 
+		{
 			System.out.println("Jogador H ativo.");
 		}
+		
 		System.out.println("Opções:");
 		System.out.println("1 - Fazer jogada");
 		System.out.println("2 - Sair");
@@ -69,7 +75,8 @@ public class Dominorio {
 		return opcao;
 	}
 	
-	private void fazerJogada(Scanner scanner) {
+	private void fazerJogada(Scanner scanner) 
+	{
 		//ler a jogada
 		Jogada jogada = this.lerJogada(scanner);
 		
@@ -84,7 +91,8 @@ public class Dominorio {
 		}
 	}
 	
-	private Jogada lerJogada(Scanner scanner) {
+	private Jogada lerJogada(Scanner scanner) 
+	{
 		Jogada jogada = null;
 		
 		if(this.jogadorVerticalAtivo) 
@@ -96,7 +104,8 @@ public class Dominorio {
 			
 			jogada = new Jogada(posicao1, posicao2);
 		}
-		else {
+		else 
+		{
 			System.out.print("Jogador H ativo. Insira primeira posição para jogar:");
 			int posicao1 = scanner.nextInt();
 			System.out.print("Jogador H ativo. Insira segunda posição para jogar:");
@@ -126,11 +135,13 @@ public class Dominorio {
 		}
 	}
 
-	private boolean isJogoConcluido() {
+	private boolean isJogoConcluido() 
+	{
 		return this.jogoConcluido;
 	}
 
-	private void setJogoConcluido(boolean jogoConcluido) {
+	private void setJogoConcluido(boolean jogoConcluido) 
+	{
 		this.jogoConcluido = jogoConcluido;
 	}
 }

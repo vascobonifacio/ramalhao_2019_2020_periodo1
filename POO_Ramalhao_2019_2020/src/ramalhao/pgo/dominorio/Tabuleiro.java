@@ -3,7 +3,8 @@ package ramalhao.pgo.dominorio;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tabuleiro {
+public class Tabuleiro 
+{
 
 	private List<List<CasaTabuleiro>> casas;
 	private int numeroCasasPorLado;
@@ -15,11 +16,13 @@ public class Tabuleiro {
 		
 		int contadorPosicoes = 1;
 		
-		for(int i = 0; i < this.numeroCasasPorLado; i++) {
+		for(int i = 0; i < this.numeroCasasPorLado; i++) 
+		{
 			
 			List<CasaTabuleiro> linha = new ArrayList<>();
 			
-			for(int j = 0; j < this.numeroCasasPorLado; j++) {
+			for(int j = 0; j < this.numeroCasasPorLado; j++) 
+			{
 				CasaTabuleiro casa = new CasaTabuleiro(contadorPosicoes);
 				contadorPosicoes++;
 				linha.add(casa);
@@ -57,11 +60,13 @@ public class Tabuleiro {
 		if(jogadorVerticalAtivo)
 		{
 			//para cada linha excepto a última
-			for(int i = 0; i < this.numeroCasasPorLado - 1; i++) {
+			for(int i = 0; i < this.numeroCasasPorLado - 1; i++) 
+			{
 				
 				List<CasaTabuleiro> linha = casas.get(i);
 				
-				for(int j = 0; j < this.numeroCasasPorLado; j++) {
+				for(int j = 0; j < this.numeroCasasPorLado; j++) 
+				{
 					if(!linha.get(j).isOcupada() &&
 							!casas.get(i+1).get(j).isOcupada() ) 
 					{
@@ -76,22 +81,20 @@ public class Tabuleiro {
 		else
 		{
 			//para cada linha
-			for(int i = 0; i < this.numeroCasasPorLado; i++) {
-				
+			for(int i = 0; i < this.numeroCasasPorLado; i++) 
+			{
 				List<CasaTabuleiro> linha = casas.get(i);
 				
-				for(int j = 0; j < this.numeroCasasPorLado - 1; j++) {
+				for(int j = 0; j < this.numeroCasasPorLado - 1; j++) 
+				{
 					if(!linha.get(j).isOcupada() && 
 							!linha.get(j+1).isOcupada()) {
 						return true;
 					}
-					
 				}
-				
 			}
 			return false;
 		}
-		
 	}
 	
 	private CasaTabuleiro obterCasa(int posicao)
@@ -102,7 +105,8 @@ public class Tabuleiro {
 		return casas.get(x).get(y);
 	}
 
-	public int getNumeroCasasPorLado() {
+	public int getNumeroCasasPorLado()
+	{
 		return numeroCasasPorLado;
 	}
 
@@ -113,7 +117,8 @@ public class Tabuleiro {
 		
 		sb.append("[\n");
 		
-		for(List<CasaTabuleiro> linha: casas) {
+		for(List<CasaTabuleiro> linha: casas)
+		{
 			sb.append(linha);
 			sb.append("\n");
 		}
@@ -122,5 +127,4 @@ public class Tabuleiro {
 
 		return sb.toString();
 	}
-
 }
