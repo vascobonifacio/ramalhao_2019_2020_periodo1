@@ -10,7 +10,7 @@ public class Teste {
     	
     	System.out.println(tabuleiro);
     	
-    	System.out.println(tabuleiro.obterCasa(56));
+    	//System.out.println(tabuleiro.obterCasa(56));
 
     }
 

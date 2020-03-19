@@ -8,8 +8,8 @@ public class Tabuleiro {
 	private List<List<CasaTabuleiro>> casas;
 	private int numeroCasasPorLado;
 	
-	public Tabuleiro(int numero) {
-		
+	public Tabuleiro(int numero)
+	{
 		this.numeroCasasPorLado = numero;
 		this.casas = new ArrayList<>();
 		
@@ -29,6 +29,11 @@ public class Tabuleiro {
 		}
 	}
 	
+	public boolean casaJaOcupada(int posicao)
+	{
+		return this.obterCasa(posicao).isOcupada();
+	}
+	
 	public void registarJogada(Jogada jogada, boolean jogadorVerticalAtivo) 
 	{		
 		CasaTabuleiro casa1 = this.obterCasa(jogada.getPosicao1());
@@ -36,10 +41,71 @@ public class Tabuleiro {
 		
 		if(jogadorVerticalAtivo)
 		{
-			
+			casa1.setJogadorQueOcupa("V");
+			casa2.setJogadorQueOcupa("V");
+		}
+		else
+		{
+			casa1.setJogadorQueOcupa("H");
+			casa2.setJogadorQueOcupa("H");
 		}
 	}
 	
+	public boolean existemJogadasDisponiveis(boolean jogadorVerticalAtivo)
+	{
+		boolean existem = true;
+		if(jogadorVerticalAtivo)
+		{
+			//para cada linha excepto a última
+			for(int i = 0; i < this.numeroCasasPorLado - 1; i++) {
+				
+				List<CasaTabuleiro> linha = casas.get(i);
+				
+				for(int j = 0; j < this.numeroCasasPorLado; j++) {
+					if(!linha.get(j).isOcupada() &&
+							!casas.get(i+1).get(j).isOcupada() ) 
+					{
+						return true;
+					}
+					
+				}
+				
+			}
+			return false;
+		}
+		else
+		{
+			//para cada linha
+			for(int i = 0; i < this.numeroCasasPorLado; i++) {
+				
+				List<CasaTabuleiro> linha = casas.get(i);
+				
+				for(int j = 0; j < this.numeroCasasPorLado - 1; j++) {
+					if(!linha.get(j).isOcupada() && 
+							!linha.get(j+1).isOcupada()) {
+						return true;
+					}
+					
+				}
+				
+			}
+			return false;
+		}
+		
+	}
+	
+	private CasaTabuleiro obterCasa(int posicao)
+	{
+		int x = (posicao - 1) / numeroCasasPorLado;
+		int y = (posicao - 1) % numeroCasasPorLado;
+
+		return casas.get(x).get(y);
+	}
+
+	public int getNumeroCasasPorLado() {
+		return numeroCasasPorLado;
+	}
+
 	@Override
 	public String toString() 
 	{
@@ -55,14 +121,6 @@ public class Tabuleiro {
 		sb.append("]");
 
 		return sb.toString();
-	}
-	
-	public CasaTabuleiro obterCasa(int posicao)
-	{
-		int x = (posicao - 1) / numeroCasasPorLado;
-		int y = (posicao - 1) % numeroCasasPorLado;
-
-		return casas.get(x).get(y);
 	}
 
 }

@@ -16,6 +16,7 @@ public class CasaTabuleiro {
 		this.ocupada = ocupada;
 	}
 	public void setJogadorQueOcupa(String jogadorQueOcupa) {
+		this.ocupada = true;
 		this.jogadorQueOcupa = jogadorQueOcupa;
 	}
 	@Override
